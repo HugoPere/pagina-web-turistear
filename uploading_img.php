@@ -1,9 +1,9 @@
 <?php
-    $server = 'localhost';
-    $usuario = "id13127437_hugo";
-    $pass = "sQ\q53j7&A7=-dZF";
-    $database= "id13127437_test_pt";
-    
+    $server = 'mysql.turistear.usmgames.cl';
+    $usuario = "turistearadmin";
+    $pass = "123ClaveAR";
+    $database= "turistearmysql";
+            
     $mysqli = new mysqli($server, $usuario, $pass, $database);
     
     $file = $_FILES['img'];
@@ -19,6 +19,9 @@
     
     $model_id= $_POST['model'];
     $qr_id= $_POST['qr'];
+    $nombre= $_POST['titulo'];
+
+    
     
     $allowed = array('jpg','jpeg','png');
     
@@ -27,18 +30,10 @@
             $filenamenew = uniqid('', true).".".$fileActualExt;
             $filedestination= 'pictures/'.$filenamenew;
             move_uploaded_file($file_TmpName, $filedestination);
-            
-            //ESCRIBIR AQUI CODIGO DE EDICION DE DB
-            
-            
-          
+
             $query = $mysqli -> query ("UPDATE QR_CODES SET id_modelo='$model_id', disponibilidad='1' where id = '$qr_id'");
-            
-            
-            header("Location: index.php");
-            
-            
-            
+
+            header("Location: uploading_img_event_one.php?qr_id=$qr_id&nombre=$nombre");
         } else {
             echo "Error, porfavor intentelo denuevo o contacte a un administrador";
         }
