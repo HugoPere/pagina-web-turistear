@@ -32,9 +32,9 @@
 		<!-- Navigation -->
 		<nav class="main_nav justify-self-end text-right">
 			<ul>
-				<li class="active"><a href="menu.html">Home</a></li>
-				<li><a href="change_event.php">Cambiar un Evento</a></li>
-				<li><a href="create_place.php">Crear un nuevo lugar</a></li>
+				<li class="active"><a href="menu.html">Inicio</a></li>
+				<li><a href="change_event.php">Cambiar un boton/información</a></li>
+				<li><a href="create_place.php">Tomar un lugar/QR</a></li>
 				<li><a href="catalog.php">Ver modelos disponibles</a></li>	
 			</ul>
 			
@@ -61,7 +61,7 @@
 		</div>
 		
 		<div class="home_title">
-			<h2>Cambiar un evento</h2>
+			<h2>Cambiar una situación</h2>
 			
 		</div>
 	
@@ -113,10 +113,35 @@
                                   <span>Nombre</span>
 							      <br>
 							      <textarea name="name" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
-
+                                  <br>
 							      <span>Descripcion</span>
 							      <br>
 							      <textarea name="descripcion" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
+                                  <br>
+                                  <label for="model">
+                                    <span>Elija un modelo</span>
+                                    <br>
+                                    <select name="model">
+                                        <?php
+                                        
+                                            $server = 'mysql.turistear.usmgames.cl';
+                                            $usuario = "turistearadmin";
+                                            $pass = "123ClaveAR";
+                                            $database= "turistearmysql";
+                                            
+                                            $mysqli = new mysqli($server, $usuario, $pass, $database);
+                                        
+                                            $query = $mysqli -> query ("SELECT * FROM MODELOS");
+                                                    
+                                            while ($valores = mysqli_fetch_array($query)) {
+                                                echo '<option value="'.$valores[id].'">'.$valores[nombre].'</option>';
+                                            }
+                                            
+                                        ?>
+                                    </select>
+                                    <br>
+                                    <a href="catalog.php">Muestrario de modelos</a>
+                                    </label>
 							      
 							      </label>
 							      <br>

@@ -32,9 +32,9 @@
 		<!-- Navigation -->
 		<nav class="main_nav justify-self-end text-right">
 			<ul>
-				<li class="active"><a href="menu.html">Home</a></li>
-				<li><a href="change_event.php">Cambiar un Evento</a></li>
-				<li><a href="create_place.php">Crear un nuevo lugar</a></li>
+				<li class="active"><a href="menu.html">Inicio</a></li>
+				<li><a href="change_event.php">Cambiar un boton/información</a></li>
+				<li><a href="create_place.php">Tomar un lugar/QR</a></li>
 				<li><a href="catalog.php">Ver modelos disponibles</a></li>	
 			</ul>
 			
@@ -69,17 +69,11 @@
 
 	<!-- Service Boxes -->
 
-	
-
 	<!-- Device -->
-
-	
 
 	<!-- Call to action 2 -->
 
 	<!-- Image Boxes -->
-
-	
 
 	<!-- Newsletter -->
 
@@ -135,7 +129,7 @@
 					        ?>
 					      </select>
 					      <br>
-					      <a href="model_showcase.php">Muestrario de modelos</a>
+					      <a href="catalog.php">Muestrario de modelos</a>
 					      </label>
 					      <br>
 					      </label>

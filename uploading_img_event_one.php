@@ -9,9 +9,7 @@
     
     $qr= $_GET['qr_id'];
     $nombre= $_GET['nombre'];
-    echo $qr;
-    echo $nombre;
-    $query = $mysqli -> query ("INSERT INTO INFORMACION_EVENTOS (id,titulo, informacion,lugar,id_qr) VALUES (NULL,'no_name','no_text','$nombre','$qr'), (NULL,'no_name','no_text','$nombre','$qr')");
-    //header("Location: index.php");
     
+    $query = $mysqli -> query ("INSERT INTO INFORMACION_EVENTOS (id,titulo, informacion,lugar,id_qr, posicion) VALUES (NULL,'no_name','no_text','$nombre','$qr', 1), (NULL,'no_name','no_text','$nombre','$qr', 2)");
+    header("Location: index.php");
 ?>

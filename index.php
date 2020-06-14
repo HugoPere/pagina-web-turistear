@@ -26,39 +26,49 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="RanGO Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #800080;} /* Blue */
+
+</style>
 </head>
 
 <body>
 
 <div class="super_container">
-	
 	<!-- Header -->
-
 	<header class="header d-flex flex-row justify-content-end align-items-center trans_200">
-		
 		<!-- Logo -->
 		<div class="logo mr-auto">
 			<a href="#">Turiste<span>AR</span></a>
 		</div>
-
 		<!-- Navigation -->
 		<nav class="main_nav justify-self-end text-right">
 			<ul>
 			</ul>
-			
 			<!-- Search -->
 			
 		</nav>
 
-		<!-- Hamburger -->
-		<div class="hamburger_container bez_1">
-			<i class="fas fa-bars trans_200"></i>
-		</div>
+		
 		
 	</header>
 
@@ -74,28 +84,22 @@
 		</div>
 		
 		<div class="home_title">
-			<h2>Login</h2>
+			<h2>Ingreso</h2>
 			<div class="reply_form_container">
 							
-							<!-- Reply Form -->
-							<form action="loggerX.php" method="POST">
-							<input id ="usuario" name="usuario" type="text" placeholder="Enter your email">
-      						<input id ="password" name="password" type="password" placeholder="Enter your Password">
-      						<br>
-      						<input type="submit" value="Submit">
+					<!-- Reply Form -->
+					<form action="loggerX.php" method="POST">
+					<input id ="usuario" name="usuario" type="text" placeholder="Ingrese su usuario">
+      				<input id ="password" name="password" type="password" placeholder="Ingrese su contraseña">
+      				<br>
+      				<input type="submit" class="button button2" value="Ingresar">
 
-							</form>
+					</form>
 
-						</div>
+				</div>
 		</div>
 	
 	</div>
-
-	<!-- Contact -->
-
-	<!-- Footer -->
-
-	
 
 </div>
 
