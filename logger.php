@@ -1,16 +1,23 @@
 <?php
-          
-            $server = 'localhost';
-            $usuario = "id13127437_hugo";
-            $pass = "sQ\q53j7&A7=-dZF";
-            $database= "id13127437_test_pt";
-            
-            $mysqli = new mysqli($server, $usuario, $pass, $database);
-          
-            $query = $mysqli -> query ("SELECT * FROM USUARIOS");
-                    
-            while ($valores = mysqli_fetch_array($query)) {
-                echo '<option value="'.$valores[id].'">'.$valores[titulo].'</option>';
-            }
-              
+    $server = 'mysql.turistear.usmgames.cl';
+    $usuario = "turistearadmin";
+    $pass = "123ClaveAR";
+    $database= "turistearmysql";
+
+    $mysqli = new mysqli($server, $usuario, $pass, $database);
+
+    $uname=$_POST['usuario'];
+    $password=$_POST['password'];
+    
+    $query = $mysqli -> query ("select * from USUARIOS where usuario='".$uname."'AND password='".$password."'");					                    
+    while ($valores = mysqli_fetch_array($query)) {
+        if($valores[tipo] == 1){
+        $id=$valores[id];
+        header("Location: menu.html?id=$id");
+        }
+        else{
+            $id=$valores[id];
+            header("Location: user_change_event.php?id=$id");
+        }
+    }
 ?>

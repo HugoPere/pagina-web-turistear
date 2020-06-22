@@ -35,7 +35,8 @@
 				<li class="active"><a href="menu.html">Inicio</a></li>
 				<li><a href="change_event.php">Cambiar un boton/información</a></li>
 				<li><a href="create_place.php">Tomar un lugar/QR</a></li>
-				<li><a href="catalog.php">Ver modelos disponibles</a></li>	
+                <li><a href="create_project.php">Crear un proyecto</a></li>
+				<li><a href="catalog.php">Ver modelos disponibles</a></li>
 			</ul>
 			
 			<!-- Search -->

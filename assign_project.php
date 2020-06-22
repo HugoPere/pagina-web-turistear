@@ -85,8 +85,8 @@
 
 						<!-- Newsletter Form -->
 						<div class="newsletter_form_container">
-							<form action="update.php" class="center" method="POST">
-								<label for="id"><span>Elija un evento a cambiar</span>
+							<form action="assigning_project.php" class="center" method="POST">
+								<label for="id"><span>Elija un usuario</span>
 							    <br>
 							      <select name="id">
 							          
@@ -99,10 +99,10 @@
 							            
 							            $mysqli = new mysqli($server, $usuario, $pass, $database);
 							          
-							            $query = $mysqli -> query ("SELECT * FROM INFORMACION_EVENTOS");
+							            $query = $mysqli -> query ("SELECT * FROM USUARIOS WHERE tipo = 2");
 							                    
 							            while ($valores = mysqli_fetch_array($query)) {
-							                echo '<option value="'.$valores[id].'">'.$valores[titulo]. ' que pertenece a '.$valores[lugar]. '</option>';
+							                echo '<option value="'.$valores[id].'">'.$valores[usuario]. ' cuyo correo es '.$valores[email]. '</option>';
 							            }
 							              
 							        ?>
@@ -110,19 +110,11 @@
 							      
 							      </label>
 							      <br>
-							      <label for="descripcion">
-                                  <span>Nombre</span>
-							      <br>
-							      <textarea name="name" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
-                                  <br>
-							      <span>Descripcion</span>
-							      <br>
-							      <textarea name="descripcion" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
-                                  <br>
-                                  <label for="model">
-                                    <span>Elija un modelo</span>
+							      <label for="project">
+                                  
+                                    <span>Elija un espacio</span>
                                     <br>
-                                    <select name="model">
+                                    <select name="project">
                                         <?php
                                         
                                             $server = 'mysql.turistear.usmgames.cl';
@@ -132,19 +124,18 @@
                                             
                                             $mysqli = new mysqli($server, $usuario, $pass, $database);
                                         
-                                            $query = $mysqli -> query ("SELECT * FROM MODELOS");
+                                            $query = $mysqli -> query ("SELECT * FROM QR_CODES WHERE id_proyecto != 0 AND user_assigned = 0");
                                                     
                                             while ($valores = mysqli_fetch_array($query)) {
-                                                echo '<option value="'.$valores[id].'">'.$valores[nombre].'</option>';
+                                                echo '<option value="'.$valores[id].'">Un espacio de '.$valores[nombre_proyecto].'</option>';
                                             }
                                             
                                         ?>
                                     </select>
                                     <br>
-                                    <a href="catalog.php">Muestrario de modelos</a>
+                                    
                                     </label>
 							      
-							      </label>
 							      <br>
 							      <input class="button newsletter_submit_button trans_200" type="submit" value="Submit">
 							</form>

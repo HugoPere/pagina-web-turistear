@@ -88,7 +88,7 @@
 			<div class="reply_form_container">
 							
 					<!-- Reply Form -->
-					<form action="loggerX.php" method="POST">
+					<form action="logger.php" method="POST">
 					<input id ="usuario" name="usuario" type="text" placeholder="Ingrese su usuario">
       				<input id ="password" name="password" type="password" placeholder="Ingrese su contraseña">
       				<br>

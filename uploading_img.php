@@ -33,6 +33,8 @@
 
             $query = $mysqli -> query ("UPDATE QR_CODES SET id_modelo='$model_id', disponibilidad='1' where id = '$qr_id'");
 
+            $query = $mysqli -> query ("INSERT INTO INFO_IMAGENES (id, nombre, descripcion, unique_name, ruta_imagen) VALUES (NULL,'$file_name',NULL,'$filenamenew','$filedestination')");
+
             header("Location: uploading_img_event_one.php?qr_id=$qr_id&nombre=$nombre");
         } else {
             echo "Error, porfavor intentelo denuevo o contacte a un administrador";

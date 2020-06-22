@@ -11,5 +11,5 @@
     $nombre= $_GET['nombre'];
     
     $query = $mysqli -> query ("INSERT INTO INFORMACION_EVENTOS (id,titulo, informacion,lugar,id_qr, posicion) VALUES (NULL,'no_name','no_text','$nombre','$qr', 1), (NULL,'no_name','no_text','$nombre','$qr', 2)");
-    header("Location: index.php");
+    header("Location: menu.html");
 ?>

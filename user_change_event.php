@@ -1,3 +1,6 @@
+<?php
+$id_user=$_GET["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +37,6 @@
 			<ul>
 				<li class="active"><a href="menu.html">Inicio</a></li>
 				<li><a href="change_event.php">Cambiar un boton/información</a></li>
-				<li><a href="create_place.php">Tomar un lugar/QR</a></li>
-                <li><a href="create_project.php">Crear un proyecto</a></li>
 				<li><a href="catalog.php">Ver modelos disponibles</a></li>	
 			</ul>
 			
@@ -98,13 +99,22 @@
 							            $database= "turistearmysql";
 							            
 							            $mysqli = new mysqli($server, $usuario, $pass, $database);
-							          
-							            $query = $mysqli -> query ("SELECT * FROM INFORMACION_EVENTOS");
-							                    
-							            while ($valores = mysqli_fetch_array($query)) {
-							                echo '<option value="'.$valores[id].'">'.$valores[titulo]. ' que pertenece a '.$valores[lugar]. '</option>';
+
+                                        $query = $mysqli -> query ("SELECT * FROM USUARIOS WHERE id=$id_user");
+
+                                        while ($valores = mysqli_fetch_array($query)) {
+							                $id_proyecto = $valores[id_proyecto];
 							            }
-							              
+
+                                        $query = $mysqli -> query ("SELECT * FROM QR_CODES WHERE user_assigned=$id_user");
+                                        while ($valores = mysqli_fetch_array($query)) {
+							                $id_qr = $valores[id];
+                                            $nombre_proyecto = $valores[nombre_proyecto];
+                                            $query = $mysqli -> query ("SELECT * FROM INFORMACION_EVENTOS WHERE id_qr=$id_qr");
+							                while ($valores = mysqli_fetch_array($query)) {
+							                    echo '<option value="'.$valores[id].'">'.$valores[titulo]. ' que pertenece a '.$valores[lugar]. '</option>';
+							                }
+							            }
 							        ?>
 							      </select>
 							      
@@ -141,7 +151,7 @@
                                         ?>
                                     </select>
                                     <br>
-                                    <a href="catalog.php">Muestrario de modelos</a>
+                                    <a href="catalog.php" target="_blank">Muestrario de modelos</a>
                                     </label>
 							      
 							      </label>
