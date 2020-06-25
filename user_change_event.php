@@ -35,13 +35,8 @@ $id_user=$_GET["id"];
 		<!-- Navigation -->
 		<nav class="main_nav justify-self-end text-right">
 			<ul>
-				<li class="active"><a href="menu.html">Inicio</a></li>
-				<li><a href="change_event.php">Cambiar un boton/información</a></li>
-				<li><a href="catalog.php">Ver modelos disponibles</a></li>	
 			</ul>
-			
-			<!-- Search -->
-			
+
 		</nav>
 
 		<!-- Hamburger -->
@@ -86,7 +81,7 @@ $id_user=$_GET["id"];
 
 						<!-- Newsletter Form -->
 						<div class="newsletter_form_container">
-							<form action="update.php" class="center" method="POST">
+							<form action="update.php" class="center" method="POST" enctype="multipart/form-data">
 								<label for="id"><span>Elija un evento a cambiar</span>
 							    <br>
 							      <select name="id">
@@ -129,6 +124,12 @@ $id_user=$_GET["id"];
 							      <br>
 							      <textarea name="descripcion" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
                                   <br>
+                                  <label for="img">
+                                  <span>Imagen</span>
+                                  <br>
+                                  <input type="file" name="img" required="true">
+                                  </label>
+                                  <br>
                                   <label for="model">
                                     <span>Elija un modelo</span>
                                     <br>
@@ -151,7 +152,7 @@ $id_user=$_GET["id"];
                                         ?>
                                     </select>
                                     <br>
-                                    <a href="catalog.php" target="_blank">Muestrario de modelos</a>
+                                    <a href="user_catalog.php" target="_blank">Muestrario de modelos</a>
                                     </label>
 							      
 							      </label>

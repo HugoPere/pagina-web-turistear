@@ -12,7 +12,7 @@
     $file_size = $_FILES['img']['size'];
     $file_error = $_FILES['img']['error'];
     $file_type = $_FILES['img']['type'];
-    
+    $allowed = array('jpg','jpeg','png');
     
     $fileExt = explode('.', $file_name);
     $fileActualExt = strtolower(end($fileExt));
@@ -21,10 +21,6 @@
     $qr_id= $_POST['qr'];
     $nombre= $_POST['titulo'];
 
-    
-    
-    $allowed = array('jpg','jpeg','png');
-    
     if (in_array($fileActualExt, $allowed)){
         if ($file_error === 0){
             $filenamenew = uniqid('', true).".".$fileActualExt;

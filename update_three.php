@@ -14,7 +14,7 @@ $database= "turistearmysql";
 
     if ($mysqli->query($query) === TRUE) {
         
-        header("Location: menu.html");
+        header("Location: index.php");
     } else {
         echo "Error updating record: " . $mysqli->error;
     }
