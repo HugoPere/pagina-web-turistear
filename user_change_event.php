@@ -120,7 +120,7 @@ $id_user=$_GET["id"];
 							      <br>
 							      <textarea name="name" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
                                   <br>
-							      <span>Descripcion</span>
+							      <span>Descripcion y link (IE: Uber Eats)</span>
 							      <br>
 							      <textarea name="descripcion" onkeyup="adjust_textarea(this)" required="true" placeholder="Max 50 caracteres"></textarea>
                                   <br>
@@ -152,9 +152,16 @@ $id_user=$_GET["id"];
                                         ?>
                                     </select>
                                     <br>
+
                                     <a href="user_catalog.php" target="_blank">Muestrario de modelos</a>
                                     </label>
-							      
+                                    <br>
+                                    <label for="link">
+                                    <span>Link del servicio (Ejemplo: Uber Eats)</span>
+							        <br>
+							        <textarea name="link" onkeyup="adjust_textarea(this)" required="true" placeholder="Ex: servicio.com/tienda"></textarea>
+                                    <br>
+                                    </label>
 							      </label>
 							      <br>
 							      <input class="button newsletter_submit_button trans_200" type="submit" value="Submit">

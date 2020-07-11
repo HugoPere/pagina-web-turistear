@@ -21,6 +21,7 @@ $database= "turistearmysql";
     $descripcion = $_POST['descripcion'];
     $name = $_POST['name'];
     $modelo = $_POST['model'];
+    $link = $_POST['link'];
 
 
     if (in_array($fileActualExt, $allowed)){
@@ -44,7 +45,7 @@ $database= "turistearmysql";
 
     
     if ($mysqli->query($query) === TRUE) {
-        header("Location: update_two.php?id_modelo=$modelo&id=$id");
+        header("Location: update_two.php?id_modelo=$modelo&id=$id&link=$link");
     } else {
         echo "Error updating record: " . $mysqli->error;
     }
